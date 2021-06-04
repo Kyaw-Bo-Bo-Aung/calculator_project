@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<style>
+		body,html{
+			margin: 0;
+			padding: 0;
+		}
+		*{
+			box-sizing: border-box;
+		}
+		body{
+			background: url('https://i.imgur.com/mSPU63U.jpg') fixed no-repeat center;
+		}
+		.wrapper{
+			width: 300px;
+			height: auto;
+			background-color: white;
+			margin: 80px auto;
+			background: rgba( 255, 255, 255, 0.30 );
+			box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+			backdrop-filter: blur( 3.0px );
+			-webkit-backdrop-filter: blur( 3.0px );
+			border-radius: 10px;
+			border: 1px solid rgba( 255, 255, 255, 0.18 );
+		}
+		#display{
+			color: white;
+			margin-bottom: 3px;
+			width: 300px;
+			min-height: 120px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			background: rgba( 0, 0, 0, 0.30 );
+			box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+			backdrop-filter: blur( 6.0px );
+			-webkit-backdrop-filter: blur( 6.0px );
+			border-radius: 10px;
+			border: 1px solid rgba( 255, 255, 255, 0.18 );
+		}
+		#operation{
+			word-wrap: break-word;
+			width: 100%;
+			margin: 15px 10px;
+			font-size: 24px;
+			font-family: "Lucida Console", "Courier New", monospace;
+		}
+		#result{
+			word-wrap: break-word;
+			margin: 15px 10px;
+			font-size: 34px;
+			text-align: right;
+			font-family: "Lucida Console", "Courier New", monospace;
+		}
+		.row{
+			display: flex;
+		}
+		.row div{
+			width: 100%;
+			height: 80px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-color: gray;
+			cursor: pointer;
+			margin: 1px;
+			border-radius: 3px;
+			font-size: 19px;
+			font-family: "Lucida Console", "Courier New", monospace;
+			font-weight: bolder;
+			background: rgba( 208, 2, 27, 0.45 );
+			box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+			backdrop-filter: blur( 4.0px );
+			-webkit-backdrop-filter: blur( 4.0px );
+			border-radius: 10px;
+			border: 1px solid rgba( 255, 255, 255, 0.18 );
+		}
+		.row div:hover{
+			background-color: #cccccc;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<div id="display">
+			<div id="operation"></div>
+			<div id="result"></div>
+		</div>
+		<div id="controller">
+			<div class="row">
+				<div id="7" onclick="setNumber('7')">7</div>
+				<div id="8" onclick="setNumber('8')">8</div>
+				<div id="9" onclick="setNumber('9')">9</div>
+				<div id="+" onclick="setNumber('+')">+</div>
+			</div>
+			<div class="row">
+				<div id="4" onclick="setNumber('4')">4</div>
+				<div id="5" onclick="setNumber('5')">5</div>
+				<div id="6" onclick="setNumber('6')">6</div>
+				<div id="-" onclick="setNumber('-')">-</div>
+			</div>
+			<div class="row">
+				<div id="1" onclick="setNumber('1')">1</div>
+				<div id="2" onclick="setNumber('2')">2</div>
+				<div id="3" onclick="setNumber('3')">3</div>
+				<div id="*" onclick="setNumber('*')">*</div>
+			</div>
+			<div class="row">
+				<div id="C" onclick="clearScreen()">C</div>
+				<div id="0" onclick="setNumber('0')">0</div>
+				<div id="=" onclick="calculate()">=</div>
+				<div id="/" onclick="setNumber('/')">/</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
